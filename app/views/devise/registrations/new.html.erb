@@ -16,6 +16,21 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+                <div class="row mt-3 d-flex justify-content-center w-50">
+                        <%= f.input :avatar, required: false, label: false %>
+                    </div>
+                    <div class="row mt-3 d-flex justify-content-center w-50">
+                        <%= f.input :full_name, required: true, label: false, placeholder: "Enter your Full Name" %>
+                    </div>
+                    <div class="row mt-3 d-flex justify-content-center w-50">
+                        <div class="input-group">
+                            <span class="input-group-text input-group-text-for-username" style="height: 38px;">@</span>
+                            <%= f.input :username, required: true, label: false, placeholder: "Enter your username", class: "form-control" %>
+                        </div>
+                    </div>
+                    <div class="row mt-3 d-flex justify-content-center w-50">
+                        <%= f.input :body, required: true, label: false, placeholder: "Enter your Bio" %>
+                    </div>
   </div>
 
   <div class="form-actions">

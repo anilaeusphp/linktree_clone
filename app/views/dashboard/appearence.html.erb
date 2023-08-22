@@ -2,7 +2,7 @@
     <h1 class="text-center mb-5">Appearence Page</h1>
     <%= simple_form_for(current_user, url: registration_path(current_user) ,html: { method: :put }, data: {turbo: false}) do |f| %>
         <div class="row ">
-            <div class="col-8">
+            <div class="col-12 col-lg-8">
                 <div class="row d-flex align-items-center flex-column justify-content-center gap-4 w-full">
                     <div class="row mt-3 d-flex justify-content-center">
                         <%= image_tag(current_user.avatar,  style: "width: 200px; objec-fit: contain; display:inline-block") if current_user.avatar.attached?  %>
@@ -27,7 +27,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4" style="background-color: pink;"></div>
+            <div class="d-none d-lg-block col-lg-4" style="background-color: pink;"></div>
         </div>
     <% end %>
 </div>

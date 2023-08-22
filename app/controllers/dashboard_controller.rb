@@ -1,6 +1,6 @@
 class DashboardController < ApplicationController
   before_action :authenticate_user!, except: [:show]
-  before_action :must_render
+  before_action :must_render, except: [:show]
   before_action :set_user, only: [:show, :appearence]
   def index
   end
@@ -21,6 +21,10 @@ class DashboardController < ApplicationController
 
   private
   def set_user
-    @user = User.find_by_id(params[:id])
+    begin
+      @user = User.friendly.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      @user = nil
+    end
   end
 end
